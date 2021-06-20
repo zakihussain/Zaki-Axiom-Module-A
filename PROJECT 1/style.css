@@ -33,6 +33,8 @@ h2 {
 
 .form {
     padding: 30px 40px;
+    text-decoration-line: underline;
+    text-decoration-color: black;
 } 
 
 .form-control {
