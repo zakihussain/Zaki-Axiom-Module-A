@@ -80,7 +80,7 @@ h2 {
     visibility: visible;
 }
 
-.form button {
+.button {
     cursor: pointer;
     background-color: lime;
     border: 2 px solid lime;
