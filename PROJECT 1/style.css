@@ -4,6 +4,7 @@
     --success-colour:limegreen;
     --error-colour:orangered;
 }
+
 * {
     box-sizing: border-box;
 }
