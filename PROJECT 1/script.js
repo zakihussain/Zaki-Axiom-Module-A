@@ -19,7 +19,12 @@ function showSuccess(input) {
     formcontrol.className = 'form-control success'
 }
 
-// This is an event listener
+//Function to check if email is valid
+function isValidEmail(email) {
+    re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+// This is an event listenerconst 
 form.addEventListener('submit',function(e) {
     e.preventDefault();
 
@@ -31,6 +36,8 @@ form.addEventListener('submit',function(e) {
 
     if ( email.value === '' ) {
         showError(email,'Email is required')
+    } else if (!isValidEmail(email.value)) {
+        showError(email,'Email is invalid')
     } else {
         showSuccess(email);
     }
@@ -40,7 +47,7 @@ form.addEventListener('submit',function(e) {
     } else {
         showSuccess(password);
     }
-    
+
     if ( password2.value === '' ) {
         showError(password2,'Confirm Password is required')
     } else {
