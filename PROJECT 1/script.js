@@ -47,4 +47,4 @@ form.addEventListener('submit',function(e) {
     e.preventDefault();
 
     checkRequired([username,email,password,password2]);
-})
+})}
