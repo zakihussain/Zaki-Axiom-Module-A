@@ -36,6 +36,8 @@ function checkRequired(inputArray) {
        }
    }); 
 
+}
+
    //Fucntion to get the ideal input field
    function getFeildId(input) {
       return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -47,4 +49,4 @@ form.addEventListener('submit',function(e) {
     e.preventDefault();
 
     checkRequired([username,email,password,password2]);
-})}
+})
