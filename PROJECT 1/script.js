@@ -39,6 +39,18 @@ function checkRequired(inputArray) {
 
 }
 
+//fuction to check lenght
+function checklenght(input, min, max ) {
+    if ( input.value.length < min ) {
+        showError(input,`${getFeildId(input)} needs to be at least ${min} characters`);
+    } else if (input.value.length > max) {
+        showError(input,`${getFeildId(input)} needs to be less than ${max} characters`);
+    } else {
+        showSuccess(input);
+    }
+
+}
+
    //Fucntion to get the ideal input field
    function getFeildId(input) {
       return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -50,4 +62,6 @@ form.addEventListener('submit',function(e) {
     e.preventDefault();
 
     checkRequired([username,email,password,password2]);
+    checklenght(username,3,10);
+    checklenght(password,6,30);
 })
