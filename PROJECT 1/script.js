@@ -19,6 +19,7 @@ function showSuccess(input) {
     formcontrol.className = 'form-control success'
 }
 
+
 //Function to check if email is valid
 function isValidEmail(email) {
     re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
