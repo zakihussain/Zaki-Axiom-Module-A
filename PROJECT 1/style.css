@@ -9,6 +9,17 @@
     box-sizing: border-box;
 }
 
+label-style {
+    color: #e41e1e;
+    display: block;
+    margin-bottom: 5px;
+    font-size: large;
+    font-family: emoji;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
 body {
     background-color: gray;
     font-family: 'Open Sans', sans-serif;
