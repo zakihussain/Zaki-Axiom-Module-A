@@ -13,7 +13,7 @@
 
 
 body {
-    background-color: gray;
+    background-color: #007bff;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -102,8 +102,8 @@ h2 {
 
 .home {
     cursor: pointer;
-    background-color: gray;
-    border: 2 px solid gray;
+    background-color:#0073e6;
+    border: 2 px solid #0073e6;
     color: black;
     display: block;
     font-size: 16px;
