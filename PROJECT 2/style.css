@@ -58,8 +58,49 @@ body{
     cursor: pointer;
     transform: scale(1.5);
 }
+.legend .seat:hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.legend{
+    padding: 5px 10px;
+    border-radius: 10px;
+    list-style-type: none;
+    border-color: #eeebdd;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.legend li small{
+    margin-left: 5px;
+}
+
+.screen {
+    background-color: white;
+    height: 80px;
+    width: auto;
+    margin: 30px 0;
+    box-shadow: 0 3px 10px rgba(255,255,255,0.5);
+}
+
+.container {
+    perspective: 1000px;
+}
 
 .row {
     display: flex;
+}
+
+p.totals{
+    color: #eeebdd;
 }
 
