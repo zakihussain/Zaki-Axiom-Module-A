@@ -58,7 +58,7 @@ container.addEventListener('click', e => {
 
 //2. listen for change in movie selection
 selectmovie.addEventListener('change', e => {
-    ticketpricec= +e.target.value;
+    ticketprice= +e.target.value;
     updateCount();
     saveMovieData(e.target.selectedIndex, e.target.value);
 })
