@@ -61,4 +61,4 @@ selectmovie.addEventListener('change', e => {
     ticketprice= +e.target.value;
     updateCount();
     saveMovieData(e.target.selectedIndex, e.target.value);
-})
+});
