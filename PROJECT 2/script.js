@@ -1,64 +1,86 @@
-// get dom elements
+// Get DOM Elements
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
-const selectmovie = document.getElementById('movie');
+const selectMovie = document.getElementById('movie');
 
-// get the ticket price from dropdown
-let ticketprice = +selectmovie.value;
+// Get the ticket price from the selectMovie dropdown
+let ticketPrice = +selectMovie.value;
 
+
+// Call the udpate UI function - get data from localstorage and update the UI
 updateUI();
 
-
-//function to update count
+// Function to update counts
 function updateCount() {
+    // Calculate how many seats are selected
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
-    const seatIndex = [...selectedSeats].map( seat =>  [...seats].indexOf(seat));
+    // Create an array using the node list
+    const seatIndex = [...selectedSeats].map( seat => [...seats].indexOf(seat) );
+    // Get the number of seats from the node list
     const selectedSeatsCount = selectedSeats.length;
+    // Update DOM with the count
     count.innerText = selectedSeatsCount;
-    total.innerText = selectedSeatsCount * ticketprice;
-    localStorage.setItem('.selectedSeats',JSON.stringify(seatIndex));
+    // Update DOM with total price
+    total.innerText = selectedSeatsCount * ticketPrice;
+    // Save data to local storage
+    localStorage.setItem('selectedSeats', JSON.stringify(seatIndex));
 };
 
-//fuction to save selected movie data
-function saveMovieData(movieIndex,movieprice) {
+// Function to save the selected movie data in local storage
+function saveMovieData(movieIndex, moviePrice) {
     localStorage.setItem('movieIndex', movieIndex);
-    localStorage.setItem('movieprice', movieprice);
+    localStorage.setItem('moviePrice', moviePrice);
 };
 
-//fuction to get data update UI
+// Funciton to get data from localstorage and update the UI
 function updateUI() {
+    // Get the selectedSeats data from localstorage
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    // Check if there are any selected seats
     if ( selectedSeats !== null && selectedSeats.length > 0 ) {
-        seats.forEach( (seat,index) => {
+        // Loop over all the seats in the theater
+        seats.forEach( (seat, index) => {
+            // If the index of seat is contained inside selectedSeats array
             if ( selectedSeats.indexOf(index) > -1 ) {
+                // Add the selected class to the seat
                 seat.classList.add('selected');
             }
         } )
     }
 
+    // Get the selected movie from localstorage
     const movieIndex = localStorage.getItem('movieIndex');
-    if ( movieIndex !== null) {
-        selectmovie.selectedIndex = movieIndex;
+    // Check if there is a movie index
+    if ( movieIndex !== null ) {
+        // Use the movieIndex from localstorage to update the movie from dropdown
+        selectMovie.selectedIndex = movieIndex;
     }
 
+    // Update the counts
     updateCount();
 };
 
-// event listner
-// 1. listen for click on container
+
+// Event Listeners
+// 1. Listen for click on container
 container.addEventListener('click', e => {
+    // Check if target has a class of seat and also is not occupied
     if ( e.target.classList.contains('seat') && !e.target.classList.contains('occupied') ) {
+        // Add or remove the selected class on click
         e.target.classList.toggle('selected');
-        // update the count
+        // Update the count of selected seats
         updateCount();
     }
 });
 
-//2. listen for change in movie selection
-selectmovie.addEventListener('change', e => {
-    ticketprice= +e.target.value;
+// 2. Listen for change in movie selection
+selectMovie.addEventListener('change', e => {
+    // Update ticket price to the selected movie
+    ticketPrice = +e.target.value;
+    // Update the counts in the DOM
     updateCount();
+    // Save the movie data to the local storage
     saveMovieData(e.target.selectedIndex, e.target.value);
-})
+}) 
