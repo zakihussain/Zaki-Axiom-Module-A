@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #B5BAD0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 30px;
+}
+
+.con {
+    border: 5px solid black;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.btn {
+    color: black;
+    background-color: #81D2C7;
+    padding: 10px 20px;
+    border: 0;
+    width: 100px;
+    margin-left: 50px;
+    font-weight: bold;
+
+}
+
+.currency {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency select {
+    padding: 10px 20px;
+    border: 1px solid #7389AE;
+    font-size: 20px;
+    background-color: transparent;
+    margin-right: 50px;
+}
+
+.currency input {
+    padding: 10px 20px;
+    border: 3px solid black;
+    background-color: transparent;
+    font-size: 20px;
+    text-align: right;
+    margin-left: 20px;
+    
+}
+
+.flip-rates-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.xrate {
+    margin-right: 50px;
+    border: 2px solid black;
+    padding: 5px;
+}
