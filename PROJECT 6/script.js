@@ -9,8 +9,8 @@ menuToggle.addEventListener('click', () => {
 
 open.addEventListener('click', () => modal.classList.add('show-model') );
 
-close.addEventListener('click', () => modal.classList.remove('show-modal') );
+close.addEventListener('click', () => modal.classList.remove('show-model') );
 
 window.addEventListener('click', e => 
-    e.target === modal ? modal.classList.remove('show-modal') :false   
+    e.target === modal ? modal.classList.remove('show-model') :false   
 );
