@@ -8,32 +8,26 @@ c.fillRect(0,0, canvas.width, canvas.height)
 
 const gravity = 0.7
 
-class sprite {
-    constructor({position, velocity}) {
-        this.position = position
-        this.velocity = velocity
-        this.height = 150
-        this.lastkey
-    }
+const background = new sprite({
+    position: {
+        x:0,
+        y:0
+    },
+    imageSrc: './Fighting Game Assets/background.png'
+})
 
-    draw() {
-        c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, 50, this.height)
-    }
+const shop = new sprite({
+    position: {
+        x:600,
+        y:128
+    },
+    imageSrc: './Fighting Game Assets/shop.png',
+    scale: 2.75,
+    framesMax: 6
+})
 
-    update() {
-        this.draw()
 
-        this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
-
-        if (this.position.y + this.height + this.velocity.y >= canvas.height) {
-            this.velocity.y = 0
-        } else this.velocity.y += gravity
-    }
-}
-
-const player = new sprite({
+const player = new Fighter({
     position: {
     x:0,
     y:0
@@ -41,10 +35,14 @@ const player = new sprite({
     velocity: {
         x:0,
         y:0
+    },
+    offset: {
+        x: 0,
+        y: 0
     }
 })
 
-const enemy = new sprite({
+const enemy = new Fighter({
     position: {
     x:400,
     y:100
@@ -52,6 +50,11 @@ const enemy = new sprite({
     velocity: {
         x:0,
         y:0
+    },
+    color: 'blue',
+    offset: {
+        x: -50,
+        y: 0
     }
 })
 
@@ -73,10 +76,14 @@ const keys = {
         }
 }
 
+decreaseTimer()
+
 function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
+    background.update()
+    shop.update()
     player.update()
     enemy.update()
     
@@ -95,7 +102,32 @@ function animate() {
     }else if (keys.ArrowRight.pressed && enemy.lastkey === 'ArrowRight') {
         enemy.velocity.x = 5 
     }
+
+    //detect for collision
+    if( rectangularCollision({
+        rectangle1: player,
+        rectangle2: enemy
+    }) && player.isAttacking) {
+        player.isAttacking = false
+        enemy.health -= 20
+        document.querySelector('#enemyHealth').style.width = enemy.health + '%'
+    }
+
+    if( rectangularCollision({
+        rectangle1: enemy,
+        rectangle2: player
+    }) && enemy.isAttacking) {
+        enemy.isAttacking = false
+        player.health -= 20
+        document.querySelector('#playerHealth').style.width = player.health + '%'
+    }
+    // end game based on health
+    if(enemy.health <= 0 || player <= 0) {
+      determineWinner({player,enemy,timerId})
+    }
 }
+
+
 
 
 animate()
@@ -113,6 +145,10 @@ window.addEventListener('keydown',  (event) => {
         case 'w' :
             player.velocity.y = -20
             break
+        case ' ':
+            player.attack()
+            break
+
 
         case 'ArrowRight' :
             keys.ArrowRight.pressed = true
@@ -125,8 +161,10 @@ window.addEventListener('keydown',  (event) => {
         case 'ArrowUp' :
             enemy.velocity.y = -20
             break
+        case 'ArrowDown' :
+            enemy.attack()
+            break
     }        
-    console.log(event.key)
 })
 
 window.addEventListener('keyup',  (event) => {
@@ -147,5 +185,4 @@ window.addEventListener('keyup',  (event) => {
             keys.ArrowLeft.pressed = false
             break
     }
-    console.log(event.key)
 })
