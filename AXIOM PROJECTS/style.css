@@ -42,3 +42,23 @@ ul {
   
   /* Page Content */
   .content {padding:20px;}
+
+  .vertical-menu {
+    width: 350px; /* Set a width if you like */
+    padding:10px;
+    background-color: white;
+  }
+  
+  .vertical-menu a {
+    background-color: #12866F; /* Grey background color */
+    color: white; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    border: 5px solid black;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: black; /* Dark grey background on mouse-over */
+    border: 5px solid white;
+  }
