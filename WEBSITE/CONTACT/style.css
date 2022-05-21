@@ -48,6 +48,12 @@ body {
     font-family: Arial;
     margin: 0;
 }
+
+.content {
+    font-style: italic;
+    padding:20px;
+    font-size: xx-large;
+  }
   
 /* Header/Logo Title */
 .header {
@@ -101,3 +107,31 @@ body {
   footer span{
       font-size: xx-large;
   }
+
+.img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.main  {
+    font-family: 'Oswald', sans-serif ;
+    text-align: center;
+    background-image: url("/WEBSITE/CONTACT/grass.jpg");
+    height: 50%;
+    padding: 5%;
+
+}
+
+.mb-6 label {
+    font-size: x-large;
+}
+

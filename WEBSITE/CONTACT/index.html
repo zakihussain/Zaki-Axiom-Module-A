@@ -13,12 +13,64 @@
         <li><a href="/WEBSITE/ABOUT/index.html">ABOUT</a></li>
         <li><a href="/WEBSITE/AXIOM PROJECTS/index.html">AXIOM PROJECTS</a></li>
         <li><a href="/WEBSITE/OTHER PROJECT/index.html">OTHER PROJECT</a></li>
-        <li1  ><a class="li1" class="active"  href="/WEBSITE/CONTACT/index.html">CONTACT INFO</a></li1>
+        <li1  ><a class="li1" class="active"  href="/WEBSITE/CONTACT/index.html">CONTACT</a></li1>
     </ul>
     
     <div class="header">
             <h1>- CONTACT</h1>
     </div>
+
+
+    <!-- 
+    =======================================================================
+
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+
+    =======================================================================
+ -->
+    <div class="main">
+          <h1 class="content">
+            Fill up the form below to send us a message.
+          </h1>
+        <div class="m-7">
+          <form action="https://api.web3forms.com/submit" method="POST" id="form">
+            <input type="hidden" name="access_key" value="b1eb6b99-00d3-4ec6-8df0-89c3d8c74be1" />
+            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+  
+            <div class="mb-6">
+                <p><label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Full Name</label></p>
+              <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+            </div>
+            <div class="mb-6">
+                <p><label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label></p>
+              <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+            </div>
+            <div class="mb-6">
+                <p><label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Phone Number</label></p>
+              <input type="text" name="phone" id="phone" placeholder="+92-000-0000000" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+            </div>
+            <div class="mb-6">
+              <p><label for="message" class=" text-sm text-gray-600 dark:text-gray-400">Your Message</label></p>
+              <textarea rows="5" name="message" id="message" placeholder="Your Message" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" ></textarea>
+            </div>
+            <div class="mb-6">
+              <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+                Send Message
+              </button>
+            </div>
+            <p class="text-base text-center text-gray-400" id="result"></p>
+          </form>
+        </div>
+    </div>
+
+  <!--Form End-->
+
+
+
 
     <footer>
         <span>&#169;</span>
