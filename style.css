@@ -88,13 +88,16 @@ body {
     padding:20px;
     font-size: x-large;
     text-align: center;
+    text-decoration: underline;
   }
 
   .contentp {
     font-style: italic;
-    padding:20px;
-    font-size: large;
+    padding:10px;
+    font-size: x-large;
     text-align: center;
+    background-color: black;
+    color: white;
   }
 
   footer {
@@ -124,4 +127,7 @@ body {
     margin-right: auto;
     width: 60%;
     padding-bottom: 5%;
+    padding-top: 5%;
+    border-right: 5px solid black ;
+    border-left: 5px solid black ;
   }
