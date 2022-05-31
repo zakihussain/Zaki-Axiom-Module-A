@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
+
+body{
+  width: max-content;
+  height: max-content;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -8,6 +17,8 @@ ul {
     overflow: hidden;
     background-color:#010504 ;
 }
+
+
   
 li {
     float: left;
